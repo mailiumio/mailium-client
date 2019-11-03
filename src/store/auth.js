@@ -4,7 +4,8 @@ import API from '@/api'
 const types = {
     SAVE_TOKEN: 'SAVE_TOKEN',
     GET_USER_ERROR: 'GET_USER_ERROR',
-    GET_USER_SUCCESS: 'GET_USER_SUCCESS'
+    GET_USER_SUCCESS: 'GET_USER_SUCCESS',
+    LOGOUT: 'LOGOUT'
 }
 
 export default {
@@ -28,6 +29,12 @@ export default {
         },
         [types.GET_USER_SUCCESS](state, user) {
             state.user = user
+        },
+        [types.LOGOUT](state) {
+            state.user = null
+            state.token = null
+
+            Cookies.remove('token')
         }
     },
     actions: {
@@ -45,6 +52,16 @@ export default {
             } catch (error) {
                 commit(types.GET_USER_ERROR)
             }
+        },
+
+        async logout({ commit }) {
+            try {
+                await API.post('/logout')
+            } catch (error) {
+                console.log(error)
+            }
+
+            commit(types.LOGOUT)
         }
     }
 }

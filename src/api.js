@@ -22,6 +22,10 @@ class API {
     get(endpoint) {
         return this.http.get(endpoint)
     }
+
+    post(endpoint, data = {}) {
+        return this.http.post(endpoint, data)
+    }
 }
 
 export default new API()
