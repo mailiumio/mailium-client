@@ -4,7 +4,7 @@
             v-for="(item, i) in items"
             :key="i"
             :to="item.link"
-            class="block px-4 py-3 border-t border-gray-200 md:p-0 md:border-0 md:ml-4"
+            class="block px-4 py-3 border-t border-gray-200 md:p-0 md:border-0 md:ml-8"
         >
             <span class="block text-sm font-medium md:text-base">{{ item.title }}</span>
             <span v-if="item.subTitle" class="text-xs text-gray-600">{{ item.subTitle }}</span>

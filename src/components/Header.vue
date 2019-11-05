@@ -16,7 +16,7 @@
                 <Navigation :class="{'hidden': !navOpen}" class="md:hidden" :items="userNavItems" />
 
                 <button
-                    class="hidden md:w-6 md:h-6 md:block md:ml-6 focus:outline-none"
+                    class="hidden md:w-6 md:h-6 md:block md:ml-8 focus:outline-none"
                     @click="toggleUserNav"
                 >
                     <img :src="user.avatar" class="md:rounded" />
