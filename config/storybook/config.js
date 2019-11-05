@@ -1,6 +1,12 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import { configure, addParameters } from '@storybook/vue'
+import { configure, addParameters, addDecorator } from '@storybook/vue'
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport'
+import StoryRouter from 'storybook-vue-router'
+import Vue from 'vue'
+import Icon from 'vue-zondicons'
+
+Vue.component('Icon', Icon)
+
+addDecorator(StoryRouter())
 
 addParameters({
     viewport: {
