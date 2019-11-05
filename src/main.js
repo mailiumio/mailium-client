@@ -1,11 +1,14 @@
 import Vue from 'vue'
 import Icon from 'vue-zondicons'
 
-import App from '@/App.vue'
+import App from '@/App'
+import Main from '@/layouts/Main'
 import router from '@/router'
 import store from '@/store'
 
 Vue.component('Icon', Icon)
+
+Vue.component('Main', Main)
 
 Vue.config.productionTip = false
 

@@ -6,6 +6,7 @@ import Dashboard from '@/pages/Dashboard'
 
 import AuthSuccess from '@/pages/auth/AuthSuccess'
 import Login from '@/pages/auth/Login'
+import Logout from '@/pages/auth/Logout'
 
 import auth from '@/middleware/auth'
 
@@ -19,6 +20,11 @@ const router = new Router({
             path: '/login',
             name: 'auth.login',
             component: Login
+        },
+        {
+            path: '/logout',
+            name: 'auth.logout',
+            component: Logout
         },
         {
             path: '/auth/callback',

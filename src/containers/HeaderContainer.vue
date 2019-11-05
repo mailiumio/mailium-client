@@ -33,7 +33,7 @@
                         subTitle: 'XXX',
                         link: '#',
                     },
-                    { title: 'Sign out', link: '#' },
+                    { title: 'Log out', link: '/logout' },
                 ]
             },
         },
