@@ -9,14 +9,38 @@ export const Default = () => ({
     data() {
         return {
             navItems: [
-                { label: 'Lists', link: '#', active: false },
-                { label: 'People', link: '#', active: false }
-            ]
+                { title: 'Lists', link: '#', active: false },
+                { title: 'People', link: '#', active: false }
+            ],
+            userNavItems: [
+                {
+                    title: 'Profile',
+                    subTitle: 'bjorn@example.com',
+                    link: '#',
+                    active: false
+                },
+                {
+                    title: 'Change Team',
+                    subTitle: 'Personal Team',
+                    link: '#',
+                    active: false
+                },
+                { title: 'Sign out', link: '#', active: false }
+            ],
+            user: {
+                name: 'Bjørn Lindholm',
+                email: 'bjorn@example.com',
+                avatar: 'https://picsum.photos/200'
+            },
+            team: {
+                id: 1,
+                name: 'Personal Team'
+            }
         }
     },
     template: `
         <StoryWrapper>
-            <Header :navItems="navItems" />
+            <Header :navItems="navItems" :userNavItems="userNavItems" :user="user" :team="team" />
         </StoryWrapper>
     `
 })
