@@ -24,7 +24,7 @@
 
                 <ContextMenu
                     :items="userNavItems"
-                    class="hidden"
+                    class="hidden min-w-48"
                     :class="{ 'md:block': userNavOpen }"
                 />
             </div>

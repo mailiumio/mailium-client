@@ -20,7 +20,7 @@
 
 <style scoped>
     nav {
-        @apply absolute bg-white shadow right-0;
+        @apply absolute bg-white shadow rounded right-0;
         top: 100%;
     }
 </style>
