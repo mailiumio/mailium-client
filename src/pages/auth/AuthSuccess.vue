@@ -8,13 +8,14 @@
     export default {
         mounted() {
             const { status, token } = this.$route.query
-            if (!status === 'success') {
+
+            if (status === 'success') {
+                this.saveToken(token)
+                this.getUser(token)
+                this.$router.replace('/dashboard')
+            } else {
                 this.$router.replace('/login')
             }
-
-            this.saveToken(token)
-            this.getUser(token)
-            this.$router.replace('/dashboard')
         },
 
         methods: {
