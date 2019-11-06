@@ -46,9 +46,9 @@ export default {
 
         async getUser({ commit }, token) {
             try {
-                const { data: { user } = {} } = await API.withToken(token).get(
-                    '/user'
-                )
+                const { data: { data: user = {} } = {} } = await API.withToken(
+                    token
+                ).get('/user')
 
                 commit(types.GET_USER_SUCCESS, user)
             } catch (error) {
