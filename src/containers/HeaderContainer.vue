@@ -17,22 +17,28 @@
             ...mapGetters({
                 token: 'auth/token',
                 user: 'auth/user',
+                team: 'teams/team',
             }),
             navItems() {
                 return mainNavigationItems
             },
             userNavItems() {
+                console.log(this.team)
                 return [
                     {
                         title: 'Profile',
                         subTitle: this.user.email,
                         link: '#',
                     },
-                    {
-                        title: 'Change Team',
-                        subTitle: 'XXX',
-                        link: '#',
-                    },
+                    ...(this.team
+                        ? [
+                              {
+                                  title: 'Change Team',
+                                  subTitle: this.team.name,
+                                  link: '#',
+                              },
+                          ]
+                        : []),
                     { title: 'Log out', link: '/logout' },
                 ]
             },
@@ -41,11 +47,13 @@
         methods: {
             ...mapActions({
                 getUser: 'auth/getUser',
+                getTeams: 'teams/getTeams',
             }),
         },
 
         mounted() {
             this.getUser(this.token)
+            this.getTeams()
         },
     }
 </script>
