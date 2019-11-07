@@ -23,7 +23,6 @@
                 return mainNavigationItems
             },
             userNavItems() {
-                console.log(this.team)
                 return [
                     {
                         title: 'Profile',
