@@ -1,6 +1,10 @@
 module.exports = {
     theme: {
-        extend: {},
+        extend: {
+            spacing: {
+                '256': '64rem'
+            }
+        },
         fontFamily: {
             sans: [
                 'Avenir',
