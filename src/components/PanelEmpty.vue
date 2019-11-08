@@ -1,6 +1,10 @@
 <template>
-    <div class="flex justify-center items-center h-24">
+    <div class="flex flex-col justify-center items-center py-10">
         <p class="text-gray-700 text-sm">{{ text }}</p>
+
+        <div v-if="$scopedSlots.action" class="mt-6">
+            <slot name="action" />
+        </div>
     </div>
 </template>
 
