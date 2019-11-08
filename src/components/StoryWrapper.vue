@@ -3,7 +3,7 @@
         class="min-h-screen bg-gray-100 font-sans"
         :class="{'flex justify-center items-center': center}"
     >
-        <div class="w-full" :class="{ 'p-4 lg:w-256': container }">
+        <div :class="{ 'p-4 w-full lg:w-256': container }">
             <slot />
         </div>
     </div>
