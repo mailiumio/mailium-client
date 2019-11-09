@@ -2,11 +2,10 @@
     <Main>
         <HalfContainer>
             <h1 class="text-xl mb-4">Lists</h1>
-            <p v-if="loading">This is loading</p>
-            <Panel v-else-if="lists.length">
+            <Panel v-if="lists.length" :loading="loading">
                 <PanelItemLink v-for="list in lists" :key="list.id" :item="list" />
             </Panel>
-            <Panel v-else>
+            <Panel v-else :loading="loading">
                 <PanelEmpty text="You don't have any lists yet">
                     <template #action>
                         <Button>Get Started</Button>

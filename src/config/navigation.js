@@ -1,4 +1,4 @@
 export const mainNavigationItems = [
-    { title: 'Lists', link: '#' },
-    { title: 'People', link: '#' }
+    { title: 'Lists', link: '/lists' },
+    { title: 'People', link: '/people' }
 ]

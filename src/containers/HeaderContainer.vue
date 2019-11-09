@@ -1,5 +1,5 @@
 <template>
-    <Header v-if="user" :user="user" :navItems="navItems" :userNavItems="userNavItems" />
+    <Header :user="user" :navItems="navItems" :userNavItems="userNavItems" />
 </template>
 
 <script>

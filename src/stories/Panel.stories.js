@@ -84,3 +84,15 @@ export const WithLinkItems = () => ({
         </StoryWrapper>
     `
 })
+
+export const Loading = () => ({
+    components: { StoryWrapper, Panel, HalfContainer },
+    template: `
+        <StoryWrapper center container>
+            <HalfContainer>
+                <Panel loading>
+                </Panel>
+            </HalfContainer>
+        </StoryWrapper>
+    `
+})
