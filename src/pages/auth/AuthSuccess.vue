@@ -12,7 +12,7 @@
             if (status === 'success') {
                 this.saveToken(token)
                 this.getUser(token)
-                this.$router.replace('/dashboard')
+                this.$router.replace('/lists')
             } else {
                 this.$router.replace('/login')
             }

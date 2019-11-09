@@ -1,8 +1,5 @@
 <template>
-    <div class="bg-white rounded shadow w-full md:w-1/2 md:mx-auto">
+    <div class="bg-white rounded shadow">
         <slot></slot>
     </div>
 </template>
-
-<script>
-</script>

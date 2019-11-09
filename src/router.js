@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/pages/Home'
-import Dashboard from '@/pages/Dashboard'
+import Lists from '@/pages/Lists'
 
 import AuthSuccess from '@/pages/auth/AuthSuccess'
 import Login from '@/pages/auth/Login'
@@ -32,9 +32,9 @@ const router = new Router({
             component: AuthSuccess
         },
         {
-            path: '/dashboard',
-            name: 'dashboard',
-            component: Dashboard,
+            path: '/lists',
+            name: 'lists',
+            component: Lists,
             meta: {
                 middleware: auth
             }

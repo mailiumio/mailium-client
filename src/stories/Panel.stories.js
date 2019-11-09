@@ -5,39 +5,44 @@ import Button from '@/components/Button'
 import PanelItem from '@/components/PanelItem'
 import PanelEmpty from '@/components/PanelEmpty'
 import PanelItemLink from '@/components/PanelItemLink'
+import HalfContainer from '@/components/HalfContainer'
 
 export default { title: 'General/Panel' }
 
 export const Empty = () => ({
-    components: { StoryWrapper, Panel, PanelEmpty },
+    components: { StoryWrapper, Panel, PanelEmpty, HalfContainer },
     template: `
         <StoryWrapper center container>
-            <Panel>
-                <PanelEmpty text="You don't have any lists yet" />
-            </Panel>
+            <HalfContainer>
+                <Panel>
+                    <PanelEmpty text="You don't have any lists yet" />
+                </Panel>
+            </HalfContainer>
         </StoryWrapper>
     `
 })
 
 export const EmptyWithAction = () => ({
-    components: { StoryWrapper, Panel, PanelEmpty, Button },
+    components: { StoryWrapper, Panel, PanelEmpty, Button, HalfContainer },
     template: `
         <StoryWrapper center container>
-            <Panel>
-                <PanelEmpty text="You don't have any lists yet">
-                    <template #action>
-                        <Button>
-                            Get Started
-                        </Button>
-                    </template>
-                </PanelEmpty>
-            </Panel>
+            <HalfContainer>
+                <Panel>
+                    <PanelEmpty text="You don't have any lists yet">
+                        <template #action>
+                            <Button>
+                                Get Started
+                            </Button>
+                        </template>
+                    </PanelEmpty>
+                </Panel>
+            </HalfContainer>
         </StoryWrapper>
     `
 })
 
 export const WithItems = () => ({
-    components: { StoryWrapper, Panel, PanelItem },
+    components: { StoryWrapper, Panel, PanelItem, HalfContainer },
     data() {
         return {
             items: [
@@ -49,15 +54,17 @@ export const WithItems = () => ({
     },
     template: `
         <StoryWrapper center container>
-            <Panel>
-                <PanelItem v-for="(item, i) in items" :key="i" :item="item" />
-            </Panel>
+            <HalfContainer>
+                <Panel>
+                    <PanelItem v-for="(item, i) in items" :key="i" :item="item" />
+                </Panel>
+            </HalfContainer>
         </StoryWrapper>
     `
 })
 
 export const WithLinkItems = () => ({
-    components: { StoryWrapper, Panel, PanelItemLink },
+    components: { StoryWrapper, Panel, PanelItemLink, HalfContainer },
     data() {
         return {
             items: [
@@ -69,9 +76,11 @@ export const WithLinkItems = () => ({
     },
     template: `
         <StoryWrapper center container>
-            <Panel>
-                <PanelItemLink v-for="(item, i) in items" :key="i" :item="item" />
-            </Panel>
+            <HalfContainer>
+                <Panel>
+                    <PanelItemLink v-for="(item, i) in items" :key="i" :item="item" />
+                </Panel>
+            </HalfContainer>
         </StoryWrapper>
     `
 })
