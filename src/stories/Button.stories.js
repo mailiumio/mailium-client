@@ -1,6 +1,7 @@
 import StoryWrapper from '@/components/StoryWrapper'
 
 import Button from '@/components/Button'
+import LinkButton from '@/components/LinkButton'
 
 export default { title: 'General/Button' }
 
@@ -36,6 +37,17 @@ export const Disabled = () => ({
             <Button variant="secondary" disabled>
                 Button
             </Button>
+        </StoryWrapper>
+    `
+})
+
+export const Link = () => ({
+    components: { StoryWrapper, LinkButton },
+    template: `
+        <StoryWrapper center>
+            <LinkButton to="#">
+                LinkButton
+            </LinkButton>
         </StoryWrapper>
     `
 })
