@@ -1,15 +1,17 @@
 <template>
-    <div class="bg-white rounded shadow">
+    <Card>
         <SkeletonList v-if="loading" :length="3" />
         <slot v-else></slot>
-    </div>
+    </Card>
 </template>
 
 <script>
+    import Card from '@/components/Card'
     import SkeletonList from '@/components/SkeletonList'
 
     export default {
         components: {
+            Card,
             SkeletonList,
         },
 
