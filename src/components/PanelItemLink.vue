@@ -1,7 +1,10 @@
 <template>
-    <a :href="item.link" class="block border-t first:border-t-0 border-gray-200 hover:bg-gray-100">
+    <router-link
+        :to="item.link"
+        class="block border-t first:border-t-0 border-gray-200 hover:bg-gray-100"
+    >
         <PanelItem :item="item" icon="cheveron-right" />
-    </a>
+    </router-link>
 </template>
 
 <script>
