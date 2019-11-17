@@ -12,7 +12,7 @@ export default {
     namespaced: true,
     state: {
         entities: {},
-        loading: false,
+        loading: true,
         errors: {}
     },
     getters: {
@@ -77,6 +77,10 @@ export default {
 
                 commit(types.SET_ERRORS, error.response?.data?.errors)
             }
+        },
+
+        setLoading({ commit }, loading) {
+            commit(types.SET_LOADING, loading)
         }
     }
 }

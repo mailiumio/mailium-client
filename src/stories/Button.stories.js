@@ -2,6 +2,7 @@ import StoryWrapper from '@/components/StoryWrapper'
 
 import Button from '@/components/Button'
 import LinkButton from '@/components/LinkButton'
+import LinkAddButton from '@/components/LinkAddButton'
 
 export default { title: 'General/Button' }
 
@@ -48,6 +49,17 @@ export const Link = () => ({
             <LinkButton to="#">
                 LinkButton
             </LinkButton>
+        </StoryWrapper>
+    `
+})
+
+export const LinkAdd = () => ({
+    components: { StoryWrapper, LinkAddButton },
+    template: `
+        <StoryWrapper center>
+            <LinkAddButton to="#">
+                Create new list
+            </LinkAddButton>
         </StoryWrapper>
     `
 })

@@ -39,6 +39,10 @@
             HalfContainer,
         },
 
+        mounted() {
+            this.setLoading(false)
+        },
+
         data() {
             return {
                 form: {
@@ -57,6 +61,7 @@
         methods: {
             ...mapActions({
                 createList: 'lists/createList',
+                setLoading: 'lists/setLoading',
             }),
             submit() {
                 this.createList(this.form)

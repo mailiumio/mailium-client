@@ -12,6 +12,9 @@
                     </template>
                 </PanelEmpty>
             </Panel>
+            <div class="flex justify-center mt-4" v-if="lists.length">
+                <LinkAddButton to="/lists/new">Create new list</LinkAddButton>
+            </div>
         </HalfContainer>
     </Main>
 </template>
@@ -23,6 +26,7 @@
     import Headline from '@/components/Headline'
     import LinkButton from '@/components/LinkButton'
     import PanelEmpty from '@/components/PanelEmpty'
+    import LinkAddButton from '@/components/LinkAddButton'
     import HalfContainer from '@/components/HalfContainer'
     import PanelItemLink from '@/components/PanelItemLink'
 
@@ -32,6 +36,7 @@
             Headline,
             LinkButton,
             PanelEmpty,
+            LinkAddButton,
             HalfContainer,
             PanelItemLink,
         },
