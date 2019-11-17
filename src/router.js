@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/pages/Home'
-import Lists from '@/pages/Lists'
+import ListsIndex from '@/pages/lists/Index'
+import ListsCreate from '@/pages/lists/Create'
 
 import AuthSuccess from '@/pages/auth/AuthSuccess'
 import Login from '@/pages/auth/Login'
@@ -32,9 +33,17 @@ const router = new Router({
             component: AuthSuccess
         },
         {
+            path: '/lists/new',
+            name: 'lists.create',
+            component: ListsCreate,
+            meta: {
+                middleware: auth
+            }
+        },
+        {
             path: '/lists',
             name: 'lists',
-            component: Lists,
+            component: ListsIndex,
             meta: {
                 middleware: auth
             }

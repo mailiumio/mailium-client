@@ -1,14 +1,14 @@
 <template>
     <Main>
         <HalfContainer>
-            <h1 class="text-xl mb-4">Lists</h1>
+            <Headline class="mb-4">Lists</Headline>
             <Panel v-if="lists.length" :loading="loading">
                 <PanelItemLink v-for="list in lists" :key="list.id" :item="list" />
             </Panel>
             <Panel v-else :loading="loading">
                 <PanelEmpty text="You don't have any lists yet">
                     <template #action>
-                        <Button>Get Started</Button>
+                        <LinkButton to="lists/new">Get Started</LinkButton>
                     </template>
                 </PanelEmpty>
             </Panel>
@@ -20,6 +20,8 @@
     import { mapActions, mapGetters } from 'vuex'
 
     import Panel from '@/components/Panel'
+    import Headline from '@/components/Headline'
+    import LinkButton from '@/components/LinkButton'
     import PanelEmpty from '@/components/PanelEmpty'
     import HalfContainer from '@/components/HalfContainer'
     import PanelItemLink from '@/components/PanelItemLink'
@@ -27,6 +29,8 @@
     export default {
         components: {
             Panel,
+            Headline,
+            LinkButton,
             PanelEmpty,
             HalfContainer,
             PanelItemLink,
