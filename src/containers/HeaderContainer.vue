@@ -24,11 +24,15 @@
             },
             userNavItems() {
                 return [
-                    {
-                        title: 'Profile',
-                        subTitle: this.user.email,
-                        link: '#',
-                    },
+                    ...(this.user
+                        ? [
+                              {
+                                  title: 'Profile',
+                                  subTitle: this.user.email,
+                                  link: '#',
+                              },
+                          ]
+                        : []),
                     ...(this.team
                         ? [
                               {

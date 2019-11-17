@@ -19,7 +19,7 @@
                     class="hidden md:w-6 md:h-6 md:block md:ml-8 focus:outline-none"
                     @click="toggleUserNav"
                 >
-                    <img :src="user.avatar" class="md:rounded" />
+                    <img :src="avatar" class="md:rounded" />
                 </button>
 
                 <ContextMenu
@@ -55,6 +55,12 @@
                 navOpen: false,
                 userNavOpen: false,
             }
+        },
+
+        computed: {
+            avatar() {
+                return this.user?.avatar
+            },
         },
 
         methods: {
