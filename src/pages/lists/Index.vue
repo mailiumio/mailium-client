@@ -58,7 +58,7 @@
                 return this.entities.map(entity => ({
                     id: entity.id,
                     name: entity.name,
-                    link: `/link/${entity.id}`,
+                    link: `/lists/${entity.id}`,
                 }))
             },
         },

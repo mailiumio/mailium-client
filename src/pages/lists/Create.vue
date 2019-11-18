@@ -3,7 +3,8 @@
         <HalfContainer>
             <Headline class="mb-4">New List</Headline>
             <form @submit.prevent="submit">
-                <Card class="p-6 md:p-10">
+                <Card class="p-6 md:px-10 py-8">
+                    <p class="mb-6">A list contains subscribers and emails sent to the subscribers.</p>
                     <Field
                         label="Name"
                         placeholder="Personal List"
