@@ -1,7 +1,10 @@
 <template>
     <Main>
         <HalfContainer>
-            <Headline class="mb-4">Lists</Headline>
+            <div class="flex justify-between mb-4">
+                <Headline>Lists</Headline>
+                <LinkAddButton to="/lists/new">Create new list</LinkAddButton>
+            </div>
             <Panel v-if="lists.length" :loading="loading">
                 <PanelItemLink v-for="list in lists" :key="list.id" :item="list" />
             </Panel>
@@ -12,9 +15,7 @@
                     </template>
                 </PanelEmpty>
             </Panel>
-            <div class="flex justify-center mt-4" v-if="lists.length">
-                <LinkAddButton to="/lists/new">Create new list</LinkAddButton>
-            </div>
+            <div class="flex justify-center mt-4"></div>
         </HalfContainer>
     </Main>
 </template>
