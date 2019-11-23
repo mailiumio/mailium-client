@@ -7,13 +7,32 @@
                 type: String,
                 required: true,
             },
+            type: {
+                type: String,
+                default: 'index',
+            },
         },
 
         computed: {
+            entity() {
+                if (this.type !== 'show') {
+                    return null
+                }
+
+                return this.$store.getters[`${this.resource}/entity`](
+                    this.$route.params?.id
+                )
+            },
+
+            entities() {
+                if (this.type !== 'index') {
+                    return null
+                }
+
+                return this.$store.getters[`${this.resource}/entities`]
+            },
+
             ...mapState({
-                entities(state, getters) {
-                    return getters[`${this.resource}/entities`]
-                },
                 loading(state, getters) {
                     return getters[`${this.resource}/loading`]
                 },
@@ -29,9 +48,18 @@
             queryProps() {
                 return {
                     team: this.team,
-                    entities: this.entities,
                     loading: this.loading,
-                    pagination: this.pagination,
+                    ...(this.type === 'show'
+                        ? {
+                              entity: this.entity,
+                          }
+                        : {}),
+                    ...(this.type === 'index'
+                        ? {
+                              entities: this.entities,
+                              pagination: this.pagination,
+                          }
+                        : {}),
                 }
             },
         },

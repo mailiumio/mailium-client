@@ -1,5 +1,10 @@
 <template>
-    <Query resource="lists" @fetch="handler" #default="{ entities, loading, pagination }">
+    <Query
+        resource="lists"
+        type="index"
+        @fetch="handler"
+        #default="{ entities, loading, pagination }"
+    >
         <Fragment>
             <div class="flex justify-between mb-4">
                 <Headline>Lists</Headline>

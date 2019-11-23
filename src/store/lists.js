@@ -23,6 +23,7 @@ export default {
     },
     getters: {
         entities: state => Object.values(state.entities),
+        entity: state => id => state.entities[id],
         loading: state => state.loading,
         errors: state => state.errors,
         pagination: state => state.pagination
@@ -93,12 +94,27 @@ export default {
                     team_id: rootGetters["teams/team"]?.id
                 });
 
-                const team = response?.data?.data;
+                const list = response?.data?.data;
 
-                commit(types.ADD_LIST, team);
+                commit(types.ADD_LIST, list);
                 commit(types.SET_LOADING, false);
 
-                router.push(`/lists/${team.id}`);
+                router.push(`/lists/${list.id}`);
+            } catch (error) {
+                commit(types.SET_LOADING, false);
+
+                commit(types.SET_ERRORS, error.response?.data?.errors);
+            }
+        },
+
+        async getList({ commit }, id) {
+            commit(types.SET_LOADING, true);
+
+            try {
+                const response = await API.get(`/lists/${id}`);
+
+                commit(types.ADD_LIST, response?.data?.data);
+                commit(types.SET_LOADING, false);
             } catch (error) {
                 commit(types.SET_LOADING, false);
 
