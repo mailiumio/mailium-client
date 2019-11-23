@@ -51,17 +51,9 @@
         computed: {
             ...mapGetters({
                 team: 'teams/team',
-                entities: 'lists/entities',
+                lists: 'lists/entities',
                 loading: 'lists/loading',
             }),
-
-            lists() {
-                return this.entities.map(entity => ({
-                    id: entity.id,
-                    name: entity.name,
-                    link: `/lists/${entity.id}`,
-                }))
-            },
         },
 
         watch: {
