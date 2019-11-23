@@ -16,14 +16,15 @@ export default {
         loading: true,
         errors: {},
         pagination: {
-            current: null,
-            last: null
+            current: 1,
+            last: 1
         }
     },
     getters: {
         entities: state => Object.values(state.entities),
         loading: state => state.loading,
-        errors: state => state.errors
+        errors: state => state.errors,
+        pagination: state => state.pagination
     },
     mutations: {
         [types.GET_LISTS_SUCCESS](state, lists) {

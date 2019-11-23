@@ -15,7 +15,9 @@
                     </template>
                 </PanelEmpty>
             </Panel>
-            <div class="flex justify-center mt-4"></div>
+            <div class="flex justify-center mt-4" v-if="pagination.last > 1">
+                <Pagination url="/lists" :current="pagination.current" :last="pagination.last" />
+            </div>
         </HalfContainer>
     </Main>
 </template>
@@ -27,6 +29,7 @@
     import Headline from '@/components/Headline'
     import LinkButton from '@/components/LinkButton'
     import PanelEmpty from '@/components/PanelEmpty'
+    import Pagination from '@/components/Pagination'
     import LinkAddButton from '@/components/LinkAddButton'
     import HalfContainer from '@/components/HalfContainer'
     import PanelItemLink from '@/components/PanelItemLink'
@@ -37,6 +40,7 @@
             Headline,
             LinkButton,
             PanelEmpty,
+            Pagination,
             LinkAddButton,
             HalfContainer,
             PanelItemLink,
@@ -53,6 +57,7 @@
                 team: 'teams/team',
                 lists: 'lists/entities',
                 loading: 'lists/loading',
+                pagination: 'lists/pagination',
             }),
         },
 
@@ -64,6 +69,11 @@
                     }
                 },
                 immediate: true,
+            },
+            $route(to, from) {
+                if (to.name === from.name) {
+                    this.getListsFromTeam(this.team.id)
+                }
             },
         },
     }
