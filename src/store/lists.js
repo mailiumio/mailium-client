@@ -15,6 +15,7 @@ export default {
         entities: {},
         loading: true,
         errors: {},
+        currentId: 1,
         pagination: {
             current: 1,
             last: 1
