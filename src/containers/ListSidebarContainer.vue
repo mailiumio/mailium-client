@@ -16,9 +16,9 @@
             list: Object,
         },
 
-        data() {
-            return {
-                items: [
+        computed: {
+            items() {
+                return [
                     {
                         name: 'Overview',
                         to: { name: 'list.overview', params: { id: this.list.id } },
@@ -27,8 +27,8 @@
                         name: 'Settings',
                         to: { name: 'list.settings', params: { id: this.list.id } },
                     },
-                ],
-            }
+                ]
+            },
         },
     }
 </script>
