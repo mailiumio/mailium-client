@@ -6,6 +6,9 @@ import ListsIndex from "@/pages/lists/Index";
 import ListsCreate from "@/pages/lists/Create";
 import ListsShow from "@/pages/lists/Show";
 
+import ListSettings from "@/pages/lists/Settings";
+import ListOverview from "@/pages/lists/Overview";
+
 import AuthSuccess from "@/pages/auth/AuthSuccess";
 import Login from "@/pages/auth/Login";
 import Logout from "@/pages/auth/Logout";
@@ -45,6 +48,18 @@ const router = new Router({
             path: "/lists/:id",
             name: "lists.show",
             component: ListsShow,
+            children: [
+                {
+                    path: "",
+                    name: "list.overview",
+                    component: ListOverview
+                },
+                {
+                    path: "settings",
+                    name: "list.settings",
+                    component: ListSettings
+                }
+            ],
             meta: {
                 middleware: auth
             }
