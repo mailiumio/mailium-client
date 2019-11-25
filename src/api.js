@@ -26,6 +26,10 @@ class API {
     post(endpoint, data = {}) {
         return this.http.post(endpoint, data);
     }
+
+    patch(endpoint, data = {}) {
+        return this.http.patch(endpoint, data);
+    }
 }
 
 export default new API();

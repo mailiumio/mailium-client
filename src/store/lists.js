@@ -6,7 +6,8 @@ const types = {
     SET_LOADING: "SET_LOADING",
     SET_ERRORS: "SET_ERRORS",
     SET_PAGINATION: "SET_PAGINATION",
-    ADD_LIST: "ADD_LIST"
+    ADD_LIST: "ADD_LIST",
+    UPDATE_LIST: "UPDATE_LIST"
 };
 
 export default {
@@ -15,7 +16,6 @@ export default {
         entities: {},
         loading: true,
         errors: {},
-        currentId: 1,
         pagination: {
             current: 1,
             last: 1
@@ -57,6 +57,15 @@ export default {
         },
         [types.SET_PAGINATION](state, pagination = {}) {
             state.pagination = { ...state.pagination, ...pagination };
+        },
+        [types.UPDATE_LIST](state, list = {}) {
+            state.entities = {
+                ...state.entities,
+                [list.id]: {
+                    ...list,
+                    link: `/lists/${list.id}`
+                }
+            };
         }
     },
     actions: {
@@ -80,7 +89,6 @@ export default {
                 commit(types.SET_LOADING, false);
             } catch (error) {
                 commit(types.SET_LOADING, false);
-                console.log(error);
             }
         },
 
@@ -115,6 +123,22 @@ export default {
 
                 commit(types.ADD_LIST, response?.data?.data);
                 commit(types.SET_LOADING, false);
+            } catch (error) {
+                commit(types.SET_LOADING, false);
+
+                commit(types.SET_ERRORS, error.response?.data?.errors);
+            }
+        },
+
+        async updateList({ commit }, list) {
+            commit(types.SET_LOADING, true);
+
+            try {
+                commit(types.SET_LOADING, false);
+
+                const response = await API.patch(`/lists/${list.id}`, list);
+
+                commit(types.UPDATE_LIST, response?.data?.data);
             } catch (error) {
                 commit(types.SET_LOADING, false);
 

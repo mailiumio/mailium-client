@@ -9,7 +9,7 @@ export const Columns6 = () => ({
     components: { StoryWrapper, Grid, GridColumn },
     template: `
         <StoryWrapper>
-            <Grid>
+            <Grid :xs="6">
                 <GridColumn class="bg-pink-200">
                     Column 1
                 </GridColumn>
@@ -37,14 +37,14 @@ export const Columns4 = () => ({
     components: { StoryWrapper, Grid, GridColumn },
     template: `
         <StoryWrapper>
-            <Grid>
+            <Grid :xs="6">
                 <GridColumn class="bg-pink-200">
                     Column 1
                 </GridColumn>
-                <GridColumn :span="2" class="bg-pink-200">
+                <GridColumn :xs="2" class="bg-pink-200">
                     Column 2
                 </GridColumn>
-                <GridColumn :span="2" class="bg-pink-200">
+                <GridColumn :xs="2" class="bg-pink-200">
                     Column 3
                 </GridColumn>
                 <GridColumn class="bg-pink-200">

@@ -15,6 +15,10 @@
 
 <style scoped>
     h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
         @apply text-xl;
     }
 </style>

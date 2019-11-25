@@ -1,7 +1,7 @@
 <template>
     <nav>
-        <ul>
-            <li v-for="item in items" :key="item.path" class="mb-2">
+        <ul class="flex overflow-x-scroll md:block">
+            <li v-for="item in items" :key="item.path" class="mr-4 md:mb-2 md:mr-0">
                 <router-link :to="item.to" class="text-sm">{{ item.name }}</router-link>
             </li>
         </ul>

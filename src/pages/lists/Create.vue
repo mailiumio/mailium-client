@@ -7,7 +7,7 @@
                     <p class="mb-6">A list contains subscribers and emails sent to the subscribers.</p>
                     <Field
                         label="Name"
-                        placeholder="Personal List"
+                        placeholder="Pre-launch"
                         class="mb-6"
                         :errors="errors.name"
                         v-model="form.name"
