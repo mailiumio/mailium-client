@@ -1,6 +1,8 @@
 import StoryWrapper from '@/components/StoryWrapper'
 
 import Modal from '@/components/Modal'
+import Button from '@/components/Button'
+import ActionModal from '@/components/ActionModal'
 
 export default { title: 'General/Modal' }
 
@@ -15,3 +17,28 @@ export const Default = () => ({
     `,
 })
 
+export const Action = () => ({
+    components: { StoryWrapper, ActionModal, Button },
+    template: `
+        <StoryWrapper>
+            <ActionModal>
+                <template #headline>
+                    Are you sure?
+                </template>
+
+                <template #content>
+                    Deleting this item will permanently delete these other items as well.
+                </template>
+
+                <template #actions>
+                    <Button variant="secondary">
+                        Cancel
+                    </Button>
+                    <Button variant="danger">
+                        Delete
+                    </Button>
+                </template>
+            </ActionModal>
+        </StoryWrapper>
+    `,
+})
