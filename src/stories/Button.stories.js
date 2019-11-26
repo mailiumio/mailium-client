@@ -14,7 +14,7 @@ export const Primary = () => ({
                 Button
             </Button>
         </StoryWrapper>
-    `
+    `,
 })
 
 export const Secondary = () => ({
@@ -25,7 +25,18 @@ export const Secondary = () => ({
                 Button
             </Button>
         </StoryWrapper>
-    `
+    `,
+})
+
+export const Danger = () => ({
+    components: { StoryWrapper, Button },
+    template: `
+        <StoryWrapper center>
+            <Button variant="danger">
+                Button
+            </Button>
+        </StoryWrapper>
+    `,
 })
 
 export const Disabled = () => ({
@@ -39,7 +50,7 @@ export const Disabled = () => ({
                 Button
             </Button>
         </StoryWrapper>
-    `
+    `,
 })
 
 export const Link = () => ({
@@ -50,7 +61,7 @@ export const Link = () => ({
                 LinkButton
             </LinkButton>
         </StoryWrapper>
-    `
+    `,
 })
 
 export const LinkAdd = () => ({
@@ -61,5 +72,5 @@ export const LinkAdd = () => ({
                 Create new list
             </LinkAddButton>
         </StoryWrapper>
-    `
+    `,
 })

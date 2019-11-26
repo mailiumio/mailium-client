@@ -22,7 +22,8 @@
     }
 
     button.primary,
-    button.secondary {
+    button.secondary,
+    button.danger {
         @apply px-6 py-3 rounded;
     }
 
@@ -40,6 +41,14 @@
 
     button[disabled].secondary {
         @apply text-gray-500;
+    }
+
+    button.danger {
+        @apply bg-red-500 text-white;
+    }
+
+    button[disabled].danger {
+        @apply bg-red-300;
     }
 
     button[disabled] {

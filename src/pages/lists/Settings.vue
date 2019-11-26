@@ -8,12 +8,13 @@
             <GridColumn :md="3" :lg="4">
                 <Card class="p-8 md:p-12">
                     <div class="mb-12">
-                        <Headline :level="2" class="mb-4 pb-1">Settings</Headline>
+                        <Headline :level="2" class="mb-4">Settings</Headline>
                         <ListSettingsContainer :list="list" />
                     </div>
 
                     <div>
-                        <Headline :level="2" class="pb-1">Actions</Headline>
+                        <Headline :level="2" class="mb-4">Actions</Headline>
+                        <ListActionsContainer :list="list" />
                     </div>
                 </Card>
             </GridColumn>
@@ -22,6 +23,7 @@
 </template>
 
 <script>
+    import ListActionsContainer from '@/containers/ListActionsContainer'
     import ListSidebarContainer from '@/containers/ListSidebarContainer'
     import ListSettingsContainer from '@/containers/ListSettingsContainer'
 
@@ -36,6 +38,7 @@
             Card,
             Headline,
             GridColumn,
+            ListActionsContainer,
             ListSidebarContainer,
             ListSettingsContainer,
         },
