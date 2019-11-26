@@ -130,7 +130,7 @@ export default {
             }
         },
 
-        async updateList({ commit }, list) {
+        async updateList({ commit, dispatch }, list) {
             commit(types.SET_LOADING, true);
 
             try {
@@ -139,10 +139,20 @@ export default {
                 const response = await API.patch(`/lists/${list.id}`, list);
 
                 commit(types.UPDATE_LIST, response?.data?.data);
+                dispatch(
+                    "feedback/addMessage",
+                    { text: "List Updated" },
+                    { root: true }
+                );
             } catch (error) {
                 commit(types.SET_LOADING, false);
 
                 commit(types.SET_ERRORS, error.response?.data?.errors);
+                dispatch(
+                    "feedback/addMessage",
+                    { text: "An error occured" },
+                    { root: true }
+                );
             }
         },
 
