@@ -15,7 +15,9 @@ export default {
         token: Cookies.get('token')
     },
     getters: {
-        authenticated: state => state.user !== null
+        authenticated: state => state.user !== null,
+        token: state => state.token,
+        user: state => state.user
     },
     mutations: {
         [types.SAVE_TOKEN](state, token) {
@@ -44,9 +46,9 @@ export default {
 
         async getUser({ commit }, token) {
             try {
-                const { data: { user } = {} } = await API.withToken(token).get(
-                    '/user'
-                )
+                const { data: { data: user = {} } = {} } = await API.withToken(
+                    token
+                ).get('/user')
 
                 commit(types.GET_USER_SUCCESS, user)
             } catch (error) {
