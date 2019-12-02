@@ -4,10 +4,10 @@ import API from '@/api'
 import router from '@/router'
 
 const types = {
-    GET_LISTS_SUCCESS: 'GET_LISTS_SUCCESS',
     SET_LOADING: 'SET_LOADING',
     SET_ERRORS: 'SET_ERRORS',
     SET_PAGINATION: 'SET_PAGINATION',
+    GET_LISTS: 'GET_LISTS',
     ADD_LIST: 'ADD_LIST',
     UPDATE_LIST: 'UPDATE_LIST',
     DELETE_LIST: 'DELETE_LIST',
@@ -32,7 +32,7 @@ export default {
         pagination: state => state.pagination,
     },
     mutations: {
-        [types.GET_LISTS_SUCCESS](state, lists) {
+        [types.GET_LISTS](state, lists) {
             state.entities = Object.fromEntries(
                 lists.map(list => [
                     list.id,
@@ -87,7 +87,7 @@ export default {
                         : 1,
                 })
 
-                commit(types.GET_LISTS_SUCCESS, lists)
+                commit(types.GET_LISTS, lists)
                 commit(types.SET_PAGINATION, {
                     current: meta.current_page,
                     last: meta.last_page,
